@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>US Dental Admission Predictor</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='dentist-icon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span style="font-family: Tahoma,Geneva, sans-serif;">CAAPID Simplified's US DENTAL ADMISSION PREDICTOR</span></h2><br>
+            <div class='description'>
+    			<p style="font-family: Tahoma,Geneva, sans-serif;">US Dental Admission Predicting Web App, Built with Flask, deployed on Heroku</p>
+    		</div>
+    	</div>
+
+        <!-- Text Area -->
+    	<div class='description2'>
+    			<p style="font-family: Tahoma,Geneva, sans-serif;">PREDICTION RESULT!</p>
+        </div>
+    	
+        
+        <br>
+        <div class='description1'>
+              <p style="font-family: Tahoma,Geneva, sans-serif;"><strong>Your Target School : </strong>{{ prediction_text1 }}</p>
+    	</div><br>
+    	<div class='description1'>
+              <p style="font-family: Tahoma,Geneva, sans-serif;"><strong>Your Probability of getting selected for an Interview with the School : </strong>{{ prediction_text6 }} %</p>
+    	</div><br>
+    	<div class='description1'>
+              <p style="font-family: Tahoma,Geneva, sans-serif;"><strong>Class Size : </strong>{{ prediction_text2 }}</p>
+    	</div><br>
+    	<div class='description1'>
+              <p style="font-family: Tahoma,Geneva, sans-serif;"><strong>Information Available on GPA Score : </strong>{{ prediction_text4 }}</p>
+    	</div><br>
+    	<div class='description1'>
+              <p style="font-family: Tahoma,Geneva, sans-serif;"><strong>Any Additional Information Available : </strong>{{ prediction_text5 }}</p>
+    	</div><br>
+        <div class='description1'>
+              <p style="font-family: Tahoma,Geneva, sans-serif;"><strong>Letters of Evaluation Required : </strong>{{ prediction_text3 }}</p>
+    	</div><br>
+        
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <!-- Footer -->
+       <div class='footer'>
+           <div class="contact">
+               <a target="_blank" href="https://github.com/VishalMandrai/Dental-Admission-Predictor_CAAPID-Project"><i class="fab fa-github fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/vishal-mandrai999/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+           </div>
+           <p class='footer-description'>Copyright © 2020</p>
+       </div>
+
+    </body>
+</html>

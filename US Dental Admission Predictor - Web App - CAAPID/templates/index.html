@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>US Dental Admission Predictor</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='dentist-icon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span style="font-family: Tahoma,Geneva, sans-serif;">CAAPID Simplified's US DENTAL ADMISSION PREDICTOR</span></h2><br>
+            <div class='description'>
+    			<p style="font-family: Tahoma,Geneva, sans-serif;">US Dental Admission Predicting Web App, Built with Flask, deployed on Heroku</p>
+    		</div>
+    	</div>
+
+        <!-- Text Area -->
+    	<div class="container1">
+    	<form action="{{ url_for('predict') }}" method="POST">
+    	
+    	<div class='description2'>
+    			<p style="font-family: Tahoma,Geneva, sans-serif;">US Dental Admission Predictor</p>
+        </div>
+    	
+        <div class="row">
+            <div class="Field">
+              <label for="fname" style="font-family: Tahoma,Geneva, sans-serif;">First Name</label>
+            </div>
+            <div class="Entry">
+              <input type="text" id="fname" name="firstname" placeholder="Your name.." required="required">
+            </div>
+        </div>
+        
+        
+        <div class="row">
+            <div class="Field">
+              <label for="lname" style="font-family: Tahoma,Geneva, sans-serif;">Last Name</label>
+            </div>
+            <div class="Entry">
+              <input type="text" id="lname" name="lastname" placeholder="Your last name.." required="required">
+            </div>
+        </div>
+        
+        <!--- Target School -->
+        <div class="row">
+            <div class="Field">
+              <label for="Target_School" style="font-family: Tahoma,Geneva, sans-serif;">Your Target School</label>
+            </div>
+            
+            <div class="Entry">
+              <select id="Target_School" name="Target_School" placeholder="Your TOEFL Score..." required="required"> 
+                <option value="Boston University Henry M. Goldman School of Dental Medicine">Boston University Henry M. Goldman School of Dental Medicine</option>
+                <option value="Columbia University College of Dental Medicine">Columbia University College of Dental Medicine</option>
+                <option value="Herman Ostrow School of Dentistry of USC">Herman Ostrow School of Dentistry of USC</option>
+                <option value="Howard University College of Dentistry">Howard University College of Dentistry</option>
+                <option value="Indiana University School of Dentistry">Indiana University School of Dentistry</option>
+                <option value="Loma Linda University School of Dentistry">Loma Linda University School of Dentistry</option>
+                <option value="Louisiana State University Health New Orleans School of Dentistry">Louisiana State University Health New Orleans School of Dentistry</option>
+                <option value="Marquette University School of Dentistry">Marquette University School of Dentistry</option>
+                <option value="New York University College of Dentistry">New York University College of Dentistry</option>
+                <option value="Rutgers, The State University of New Jersey School of Dental Medicine">Rutgers, The State University of New Jersey School of Dental Medicine</option>
+                <option value="Southern Illinois University School of Dental Medicine">Southern Illinois University School of Dental Medicine</option>
+                <option value="The Maurice H. Kornberg School of Dentistry Temple University - Attrition Based Program">The Maurice H. Kornberg School of Dentistry Temple University - Attrition Based Program</option>
+                <option value="The Maurice H. Kornberg School of Dentistry Temple University - International Program">The Maurice H. Kornberg School of Dentistry Temple University - International Program</option>
+                <option value="The University of Iowa College of Dentistry & Dental Clinics">The University of Iowa College of Dentistry & Dental Clinics</option>
+                <option value="Tufts University School of Dental Medicine">Tufts University School of Dental Medicine</option>
+                <option value="University at Buffalo School of Dental Medicine">University at Buffalo School of Dental Medicine</option>
+                <option value="University of Alabama at Birmingham School of Dentistry">University of Alabama at Birmingham School of Dentistry</option>
+                <option value="University of California, Los Angeles School of Dentistry">University of California, Los Angeles School of Dentistry</option>
+                <option value="University of California, San Francisco School of Dentistry">University of California, San Francisco School of Dentistry</option>
+                <option value="University of Colorado School of Dental Medicine">University of Colorado School of Dental Medicine</option>
+                <option value="University of Florida College of Dentistry">University of Florida College of Dentistry</option>
+                <option value="University of Illinois at Chicago College of Dentistry">University of Illinois at Chicago College of Dentistry</option>
+                <option value="University of Louisville School of Dentistry">University of Louisville School of Dentistry</option>
+                <option value="University of Michigan School of Dentistry">University of Michigan School of Dentistry</option>
+                <option value="University of Minnesota School of Dentistry">University of Minnesota School of Dentistry</option>
+                <option value="University of Nebraska Medical Center College of Dentistry">University of Nebraska Medical Center College of Dentistry</option>
+                <option value="University of Nevada, Las Vegas School of Dental Medicine">University of Nevada, Las Vegas School of Dental Medicine</option>
+                <option value="University of New England College of Dental Medicine">University of New England College of Dental Medicine</option>
+                <option value="University of North Carolina at Chapel Hill, Adams School of Dentistry">University of North Carolina at Chapel Hill, Adams School of Dentistry</option>
+                <option value="University of Oklahoma College of Dentistry">University of Oklahoma College of Dentistry</option>
+                <option value="University of Pennsylvania School of Dental Medicine">University of Pennsylvania School of Dental Medicine</option>
+                <option value="University of Pittsburgh School of Dental Medicine">University of Pittsburgh School of Dental Medicine</option>
+                <option value="University of Puerto Rico School of Dental Medicine">University of Puerto Rico School of Dental Medicine</option>
+                <option value="University of Washington School of Dentistry">University of Washington School of Dentistry</option>
+                <option value="University of the Pacific Arthur A. Dugoni School of Dentistry">University of the Pacific Arthur A. Dugoni School of Dentistry</option>
+                <option value="Virginia Commonwealth University School of Dentistry">Virginia Commonwealth University School of Dentistry</option>
+                <option value="Western University Health Sciences College of Dental Medicine">Western University Health Sciences College of Dental Medicine</option>
+                </select>
+            </div>
+        </div>
+        
+    	<!--- NBDE 1 --->
+    	<div class="row">
+            <div class="Field">
+              <label for="NBDE_1" style="font-family: Tahoma,Geneva, sans-serif;">NBDE I (Which try?)</label>
+            </div>
+            
+            <div class="Entry">
+              <select id="NBDE_1" name="NBDE_1" placeholder="Your TOEFL Score..." required="required"> 
+                <option value="1">1st</option>
+                <option value="2">2nd</option>
+                <option value="3">3rd</option>
+                <option value="4">4th</option>
+                <option value="5">5th</option>
+                </select>
+            </div>
+        </div>    	
+        
+    	<!--- NBDE 2 --->
+    	<div class="row">
+            <div class="Field">
+              <label for="NBDE_2" style="font-family: Tahoma,Geneva, sans-serif;">NBDE II (Which try?)</label>
+            </div>
+            
+            <div class="Entry">
+              <select id="NBDE_2" name="NBDE_2" placeholder="Your TOEFL Score..." required="required"> 
+                <option value="1">1st</option>
+                <option value="2">2nd</option>
+                <option value="3">3rd</option>
+                <option value="4">4th</option>
+                <option value="5">5th</option>
+                </select>
+            </div>
+        </div> 
+        
+    	<!--- ADAT --->
+        <div class="row">
+            <div class="Field">
+              <label for="ADAT" style="font-family: Tahoma,Geneva, sans-serif;">ADAT Test</label>
+            </div>
+            
+            <div class="Entry">
+              <select id="ADAT" name="ADAT" placeholder="Your TOEFL Score..." required="required"> 
+                <option value="Yes">Given</option>
+                <option value="No">NOT Given</option>
+                </select>
+            </div>
+        </div>
+    	
+    	<!--- TOEFL_Min --->
+    	<div class="row">
+            <div class="Field">
+              <label for="TOEFL_Min" style="font-family: Tahoma,Geneva, sans-serif;">TOEFL Score</label>
+            </div>
+            
+            <div class="Entry"> 
+              <input type="text" id="TOEFL_Min" name="TOEFL_Min" placeholder="Your TOEFL Score..." required="required">
+            </div>
+        </div>
+    	
+    	<!--- Home Education --->
+    	<div class="row">
+            <div class="Field">
+              <label for="Home_Edu" style="font-family: Tahoma,Geneva, sans-serif;">Home Education</label>
+            </div>
+            
+            <div class="Entry">
+              <select id="Home_Edu" name="Home_Edu" placeholder="Your TOEFL Score..." required="required"> 
+              <option value="MDS">MDS</option>
+              <option value="Other">Other</option> 
+              </select>
+            </div>
+        </div>
+    	
+    	<!--- USA Education --->
+    	<div class="row">
+            <div class="Field">
+              <label for="USA_Edu" style="font-family: Tahoma,Geneva, sans-serif;">USA Education</label>
+            </div>
+            
+            <div class="Entry">
+              <select id="USA_Edu" name="USA_Edu" placeholder="Your TOEFL Score..." required="required"> 
+              <option value="Certifications (not CE)">Certifications (not CE)</option>
+              <option value="Fellowship">Fellowship</option>
+              <option value="MHA">MHA</option>
+              <option value="MPH">MPH</option>
+              <option value="MS">MS</option>
+              <option value="Other">Other</option>
+              <option value="PhD">PhD</option>
+              <option value="Residency">Residency</option>
+              </select>
+            </div>
+        </div>
+    	
+    	<!--- USA Assistantship --->
+    	<div class="row">
+            <div class="Field">
+              <label for="USA_Assistantship" style="font-family: Tahoma,Geneva, sans-serif;">USA Assistantship</label>
+            </div>
+            
+            <div class="Entry">
+              <select id="USA_Assistantship" name="USA_Assistantship" placeholder="Your TOEFL Score..." required="required"> 
+              <option value="<150 hours"> <150 hours </option>
+              <option value="<200 hours"><200 hours</option>
+              <option value=">200 hours">>200 hours</option>
+              </select>
+            </div>
+        </div>
+    	
+    	<!--- USA Shadowing --->
+    	<div class="row">
+            <div class="Field">
+              <label for="USA_Shadowing" style="font-family: Tahoma,Geneva, sans-serif;">USA Shadowing</label>
+            </div>
+            
+            <div class="Entry">
+              <select id="USA_Shadowing" name="USA_Shadowing" placeholder="Your TOEFL Score..." required="required"> 
+              <option value="<150 hours"> <150 hours </option>
+              <option value="<200 hours"><200 hours</option>
+              <option value=">200 hours">>200 hours</option>
+              </select>
+            </div>
+        </div>
+
+        <!--- USA Conferences --->
+        <div class="row">
+            <div class="Field">
+              <label for="USA_Conferences" style="font-family: Tahoma,Geneva, sans-serif;">USA Conferences</label>
+            </div>
+            
+            <div class="Entry">
+              <select id="USA_Conferences" name="USA_Conferences" placeholder="Your TOEFL Score..." required="required"> 
+              <option value="Presented">Presented</option>
+              <option value="Attended">Attended</option>
+              </select>
+            </div>
+        </div>
+
+        <!--- USA Research --->
+        <div class="row">
+            <div class="Field">
+              <label for="USA_Research" style="font-family: Tahoma,Geneva, sans-serif;">USA Research</label>
+            </div>
+            
+            <div class="Entry">
+              <select id="USA_Research" name="USA_Research" placeholder="Your TOEFL Score..." required="required"> 
+              <option value="Case reports">Case reports</option>
+              <option value="Clinical trials">Clinical trials</option>
+              <option value="Literature review">Literature review</option>
+              <option value="Research assistant">Research assistant</option>
+              <option value="Systematic review">Systematic review</option>
+              </select>
+            </div>
+        </div>
+        
+        <!--- Home Assistantship --->
+        <div class="row">
+            <div class="Field">
+              <label for="Home_Assistantship" style="font-family: Tahoma,Geneva, sans-serif;">Home Assistantship</label>
+            </div>
+            
+            <div class="Entry">
+              <select id="Home_Assistantship" name="Home_Assistantship" placeholder="Your TOEFL Score..." required="required"> 
+              <option value="<150 hours"> <150 hours </option>
+              <option value="<200 hours"><200 hours</option>
+              <option value=">200 hours">>200 hours</option>
+              </select>
+            </div>
+        </div>
+        
+        <!--- Home Shadowing --->
+        <div class="row">
+            <div class="Field">
+              <label for="Home_Shadowing" style="font-family: Tahoma,Geneva, sans-serif;">Home Shadowing</label>
+            </div>
+            
+            <div class="Entry">
+              <select id="Home_Shadowing" name="Home_Shadowing" placeholder="Your TOEFL Score..." required="required"> 
+              <option value="<150 hours"> <150 hours </option>
+              <option value="<200 hours"><200 hours</option>
+              <option value=">200 hours">>200 hours</option>
+              </select>
+            </div>
+        </div>
+        
+        <!--- GPA --->
+    	<div class="row">
+            <div class="Field">
+              <label for="GPA" style="font-family: Tahoma,Geneva, sans-serif;">GPA Score</label>
+            </div>
+            
+            <div class="Entry">
+              <input type="text" id="GPA" name="GPA" placeholder="Your GPA Score..." required="required">
+            </div>
+        </div>
+    	
+        <br>
+		<input type="submit" class="my-cta-button" value="Predict">
+        </form>
+        </div>
+        <br>
+        <br>
+        
+        <div class='description1'>
+              <p style="font-family: Tahoma,Geneva, sans-serif;"><strong>{{ prediction_text }}</strong></p>
+    	</div><br>
+        
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <!-- Footer -->
+       <div class='footer'>
+           <div class="contact">
+               <a target="_blank" href="https://github.com/VishalMandrai/Dental-Admission-Predictor_CAAPID-Project"><i class="fab fa-github fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/vishal-mandrai999/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+           </div>
+           <p class='footer-description'>Copyright © 2020</p>
+       </div>
+
+    </body>
+</html>
