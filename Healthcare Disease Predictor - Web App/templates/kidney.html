@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Healthcare+</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='healthcare-icon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Healthcare+</span></h2><br>
+            <div class='description'>
+    			<p>A Machine Learning Based Desease Predictor Web App, Built with Flask, Deployed using Heroku.</p>
+    		</div>
+    	</div>
+    	
+        <div class="topnav">
+          <a class="active" href="/">Home</a>
+          <a class="active1" >Our Predictors |</a>
+          <a class="active1" href="/cancer">Cancer</a>
+          <a class="active1" href="/diabetes">Diabetes</a>
+          <a class="active1" href="/heart">Heart</a>
+          <a class="active1" href="/kidney">Kidney</a>
+          <a class="active1" href="/liver">Liver</a>
+        </div>
+        <br><br>
+        <div class='description3'>
+              <p>Kidney Disease Predictor</p>
+    	</div>
+
+        <!-- Text Area -->
+    	<div class="ml-container">
+       		<form action="{{ url_for('predict_kidney') }}" method="POST">
+            
+                <div class='description2'><p>Provide Your Details Below:</p></div><br>                       
+                <input class="form-input" type="text" name=" Age " placeholder=" Age " required="required" />
+                <input class="form-input" type="text" name=" B.P " placeholder=" B.P " required="required" /><br>
+                <input class="form-input" type="text" name=" S.G " placeholder=" S.G " required="required" />
+                <input class="form-input" type="text" name=" A.L " placeholder=" A.L " required="required" /><br>
+                <input class="form-input" type="text" name=" R.B.C " placeholder=" R.B.C " required="required" />
+                <input class="form-input" type="text" name=" P.C " placeholder=" P.C " required="required" /><br>
+                <input class="form-input" type="text" name=" P.C.C " placeholder=" P.C.C " required="required" />
+                <input class="form-input" type="text" name=" B.A " placeholder=" B.A " required="required" /><br>
+                <input class="form-input" type="text" name=" B.G.R " placeholder=" B.G.R " required="required" />
+                <input class="form-input" type="text" name=" B.U " placeholder=" B.U " required="required" /><br>
+                <input class="form-input" type="text" name=" S.C " placeholder=" S.C " required="required" />
+                <input class="form-input" type="text" name=" S.O.D " placeholder=" S.O.D " required="required" /><br>
+                <input class="form-input" type="text" name=" P.O.T " placeholder=" P.O.T " required="required" />
+                <input class="form-input" type="text" name=" HEMO " placeholder=" HEMO " required="required" /><br>
+                <input class="form-input" type="text" name=" PCV " placeholder=" PCV " required="required" />
+                <input class="form-input" type="text" name=" WC " placeholder=" WC " required="required" /><br>
+                <input class="form-input" type="text" name=" RC " placeholder=" RC " required="required" />
+                <input class="form-input" type="text" name=" HTN " placeholder=" HTN " required="required" /><br>
+                <input class="form-input" type="text" name=" D.M " placeholder=" D.M " required="required" />
+                <input class="form-input" type="text" name=" CAD " placeholder=" CAD " required="required" /><br>
+                <input class="form-input" type="text" name=" Appet " placeholder=" Appet " required="required" />
+                <input class="form-input" type="text" name=" P.E " placeholder=" P.E " required="required" /><br>
+                <input class="form-input" type="text" name=" ANE " placeholder=" ANE " required="required" /><br><br>
+                
+                
+        		<input type="submit" class="my-cta-button" value="Predict">
+        		<br><br><br>
+
+        	</form>
+        </div>    		       
+        <div class='description1'>
+              <p>{{ prediction_text }}</p>
+    	</div>
+        <br>
+
+    	</div>
+
+        <!-- Footer -->
+       <div class='footer'>
+           <div class="contact">
+               <a target="_blank" href="https://github.com/VishalMandrai/Healthcare-ML-Based-Web-App"><i class="fab fa-github fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/vishal-mandrai999/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+           </div>
+           <p class='footer-description'>Made with ❤️ by Vishal Mandrai</p>
+       </div>
+
+    </body>
+</html>

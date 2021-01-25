@@ -1,0 +1,235 @@
+html{
+	height: auto;
+	margin: auto;
+}
+
+body{
+	font-family: Arial, Helvetica,sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	background: #d0e8f2;
+}
+
+/* Website Title */
+.container{
+    padding: 21px;
+	position: relative;
+	background: linear-gradient(0.25turn, #07031a, #07031a);
+	background-size: 500% 500%;
+	animation: change-gradient 5s ease-in-out infinite;
+}
+@keyframes change-gradient {
+	0%{
+		background-position: 0 50%;
+	}
+	50%{
+		background-position: 100% 50%;
+	}
+	100%{
+		background-position: 0 50%;
+	}
+}
+
+.container-heading{
+    margin: 0;
+}
+
+.heading_font{
+    color: #ffffff;
+    font-family: emoji; 
+    font-style:normal;
+	font-size: 60px;
+	font-weight: 900;
+	font-weight: normal;
+    font-weight:bolder;
+}
+
+.description p{
+	color: #ffffff;
+    font-style: initial;
+    font-size: 25px;
+    margin: -10px 0 0;
+}
+
+.description1 p{
+	color: #000000;
+    font-style: initial;
+    font-family:unset; 
+    font-size: 25px;
+    margin: -25px 0 0;
+    font-weight:bold;
+}
+
+.description2 p{
+	color: #111111;
+    font-style: initial;
+    font-size: 30px;
+    margin: -25px 0 0;
+    font-weight:bold;
+
+}
+
+.description3 p{
+	color: #111111;
+    font-style: initial;
+    font-size: 35px;
+    margin: -25px 0 0;
+    font-weight:bold;
+
+}
+
+/* Navigation Bar */
+.topnav {
+  overflow: hidden;
+  background-color: #000;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #000000;
+  color: white;
+}
+
+.topnav a.active1 {
+  background-color: #eff8ff;
+  color: black;
+}
+
+/* Text Area */
+.ml-container{
+    margin: 30px 0;
+	flex: 1 0 auto;
+}
+
+.form-input {
+	text-align: center;
+	width: 500px;
+	height: 25px;
+	font-style: normal;
+    font-size: 18px;
+	margin-bottom: 5px;
+	font-weight: 500;
+}
+
+/* Predict Button */
+.my-cta-button{
+	background: #ffffff;
+   	border: 2px solid #000000;
+    border-radius: 1000px;
+    box-shadow: 5px 5px #686363;
+	margin-top: 20px;
+    padding: 10px 40px;
+    color: #000000;
+    display: inline-block;
+   	font: italic bold 20px/1 "Calibri", sans-serif;
+    text-align: center;
+}
+
+.my-cta-button:hover{
+    color: #5a575e;
+    border: 2px solid #000000;
+}
+
+.my-cta-button:active{
+    box-shadow: 0 0;
+}
+
+/* Home Page Content */
+.top-heading{
+	box-sizing: border-box; 
+	margin-top: 10px; 
+	margin-bottom: 0.5rem; 
+	font-weight: 500; 
+	line-height: 1.2; 
+	color: rgb(68, 68, 68); 
+	font-size: 2.2rem; 
+	orphans: 2; 
+	text-align: center; 
+}
+
+.paragraph{
+    box-sizing: border-box; 
+    margin-top: 0px; 
+    margin-bottom: 1.5rem; 
+    color: rgb(51, 51, 51); 
+    font-size:18px;  
+    font-weight: 400; 
+    orphans: 2; 
+    text-align: justify; 
+    margin-left: 60px;
+    margin-right: 60px;
+
+}
+
+.under-heading{
+	box-sizing: border-box; 
+	margin-top: 0px; 
+	margin-bottom: 0.5rem; 
+	font-weight: bold; 
+	line-height: 1.2; 
+	color: rgb(68, 68, 68); 
+	font-size: 1.75rem; 
+	text-align: left; 
+	margin-left: 60px;
+    margin-right: 60px;
+}
+
+.under-sub-heading{
+	box-sizing: border-box; 
+	margin-top: 0px; 
+	margin-bottom: 0.5rem; 
+	font-weight: 500; 
+	line-height: 1.2; 
+	color: rgb(68, 68, 68); 
+	font-size: 1.60rem; 
+	text-align: left; 
+	margin-left: 60px;
+    margin-right: 60px;
+}
+
+
+/* Contact */
+.contact-icon{
+	color: #ffffff;
+	padding: 7px;
+}
+
+.contact-icon:hover{
+	color: #8c8c8c;
+}
+
+
+/* Footer */
+.footer{
+	flex-shrink: 0;
+	position: relative;
+	padding: 15px;
+	background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
+	background-size: 500% 500%;
+	animation: change-gradient 20s ease-in-out infinite;
+}
+
+.footer-description{
+	color: #ffffff;
+	margin: 0;
+	font-size: 18px;
+}
+

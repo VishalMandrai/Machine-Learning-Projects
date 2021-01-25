@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Healthcare+</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='healthcare-icon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Healthcare+</span></h2><br>
+            <div class='description'>
+    			<p>A Machine Learning Based Desease Predictor Web App, Built with Flask, Deployed using Heroku.</p>
+    		</div>
+    	</div>
+    	
+        <div class="topnav">
+          <a class="active" href="/">Home</a>
+          <a class="active1" >Our Predictors |</a>
+          <a class="active1" href="/cancer">Cancer</a>
+          <a class="active1" href="/diabetes">Diabetes</a>
+          <a class="active1" href="/heart">Heart</a>
+          <a class="active1" href="/kidney">Kidney</a>
+          <a class="active1" href="/liver">Liver</a>
+        </div>
+        <br><br>
+        <div class='description3'>
+              <p>Breast Cancer Predictor</p>
+    	</div>
+
+        <!-- Text Area -->
+    	<div class="ml-container">
+       		<form action="{{ url_for('predict_cancer') }}" method="POST">
+               
+                <div class='description2'><p>Provide Your Details Below:</p></div><br>
+                <input class="form-input" type="text" name="Radius_mean" placeholder="Radius Mean" required="required" />
+                <input class="form-input" type="text" name="Texture_mean" placeholder="Texture mean" required="required" /><br>
+                <input class="form-input" type="text" name="Perimeter_mean" placeholder="Perimeter Mean" required="required" />
+                <input class="form-input" type="text" name="Area_mean" placeholder="Area Mean" required="required" /><br>
+                <input class="form-input" type="text" name="Smoothness_mean" placeholder="Smoothness Mean" required="required" />
+                <input class="form-input" type="text" name="Compactness_mean" placeholder="Compactness Mean" required="required" /><br>
+                <input class="form-input" type="text" name="Concavity_mean" placeholder="Concavity Mean" required="required" />
+                <input class="form-input" type="text" name="Concave points_mean" placeholder="Concave Point Mean" required="required" /><br>
+                <input class="form-input" type="text" name="Symmetry_mean" placeholder="Symmetry Mean" required="required" />
+                <input class="form-input" type="text" name="Fractal_dimension_mean" placeholder="Fractal Dimension Mean" required="required" /><br>
+                <input class="form-input" type="text" name="Radius_se" placeholder="Radius se" required="required" />
+                <input class="form-input" type="text" name="Texture_se" placeholder="Texture se" required="required" /><br>
+                <input class="form-input" type="text" name="Perimeter_se" placeholder="Perimeter se" required="required" />
+                <input class="form-input" type="text" name="Area_se" placeholder="Area se" required="required" /><br>
+                <input class="form-input" type="text" name="Smoothness_se" placeholder="Smoothness se" required="required" />
+                <input class="form-input" type="text" name="Compactness_se" placeholder="Compactness se" required="required" /><br>
+                <input class="form-input" type="text" name="Concavity_se" placeholder="Concavity se" required="required" />
+                <input class="form-input" type="text" name="Concave points_se" placeholder="Concave Point se" required="required" /><br>
+                <input class="form-input" type="text" name="Symmetry_se" placeholder="Symmetry se" required="required" />
+                <input class="form-input" type="text" name="Fractal_dimension_se" placeholder="Fractal Dimension se" required="required" /><br>
+                <input class="form-input" type="text" name="Radius_worst" placeholder="Radius Worst" required="required" />
+                <input class="form-input" type="text" name="Texture_worst" placeholder="Texture Worst" required="required" /><br>
+                <input class="form-input" type="text" name="Perimeter_worst" placeholder="Perimeter Worst" required="required" />
+                <input class="form-input" type="text" name="Area_worst" placeholder="Area Worst" required="required" /><br>
+                <input class="form-input" type="text" name="Smoothness_worst" placeholder="Smoothness Worst" required="required" />
+                <input class="form-input" type="text" name="Compactness_worst" placeholder="Compactness Worst" required="required" /><br>
+                <input class="form-input" type="text" name="Compactness_se" placeholder="Compactness se" required="required" />
+                <input class="form-input" type="text" name="Concavity_worst" placeholder="Concavity Worst" required="required" /><br>
+                <input class="form-input" type="text" name="Concave points_worst" placeholder="Concave Point Worst" required="required" />
+                <input class="form-input" type="text" name="Symmetry_worst" placeholder="Symmetry Worst" required="required" /><br>
+                <input class="form-input" type="text" name="Fractal_dimension_worst" placeholder="Fractal Dimension Worst" required="required" /><br>
+             
+        		<input type="submit" class="my-cta-button" value="Predict">
+        		<br><br><br>
+
+        	</form>
+        </div>    		       
+        <div class='description1'>
+              <p>{{ prediction_text }}</p>
+    	</div>
+        <br>
+
+    	</div>
+
+        <!-- Footer -->
+       <div class='footer'>
+           <div class="contact">
+               <a target="_blank" href="https://github.com/VishalMandrai/Healthcare-ML-Based-Web-App"><i class="fab fa-github fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/vishal-mandrai999/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+           </div>
+           <p class='footer-description'>Made with ❤️ by Vishal Mandrai</p>
+       </div>
+
+    </body>
+</html>

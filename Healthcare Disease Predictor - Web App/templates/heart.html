@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Healthcare+</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='healthcare-icon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Healthcare+</span></h2><br>
+            <div class='description'>
+    			<p>A Machine Learning Based Desease Predictor Web App, Built with Flask, Deployed using Heroku.</p>
+    		</div>
+    	</div>
+    	
+        <div class="topnav">
+          <a class="active" href="/">Home</a>
+          <a class="active1" >Our Predictors |</a>
+          <a class="active1" href="/cancer">Cancer</a>
+          <a class="active1" href="/diabetes">Diabetes</a>
+          <a class="active1" href="/heart">Heart</a>
+          <a class="active1" href="/kidney">Kidney</a>
+          <a class="active1" href="/liver">Liver</a>
+        </div>
+        <br><br>
+        <div class='description3'>
+              <p>Heart Disease Predictor</p>
+    	</div>
+
+        <!-- Text Area -->
+    	<div class="ml-container">
+       		<form action="{{ url_for('predict_heart') }}" method="POST">
+       		
+                <div class='description2'><p>Provide Your Details Below:</p></div><br>                       
+                <input class="form-input" type="text" name=" Age " placeholder=" Age " required="required" />
+                <input class="form-input" type="text" name=" Sex [1:Male , 0:Female] " placeholder=" Sex [1:Male , 0:Female] " required="required" /><br>
+                <input class="form-input" type="text" name=" Chest Pain Type: 1,2 or 3 " placeholder=" Chest Pain Type: 1,2 or 3 " required="required" />
+                <input class="form-input" type="text" name=" Trestbps : Resting Blood Pressure " placeholder=" Trestbps : Resting Blood Pressure " required="required" /><br>
+                <input class="form-input" type="text" name=" Serum cholestoral in mg/dl " placeholder=" Serum cholestoral in mg/dl " required="required" />
+                <input class="form-input" type="text" name="  fasting blood sugar " placeholder="  fasting blood sugar " required="required" /><br>
+                <input class="form-input" type="text" name=" Resting Electrocardiographic Results " placeholder=" Resting Electrocardiographic Results " required="required" />
+                <input class="form-input" type="text" name=" Thalach : Maximum Heart Rate Achieved " placeholder=" Thalach : Maximum Heart Rate Achieved " required="required" /><br>
+                <input class="form-input" type="text" name=" Exang : Exercise Induced Angina " placeholder=" Exang : Exercise Induced Angina " required="required" />
+                <input class="form-input" type="text" name=" Oldpeak " placeholder=" Oldpeak " required="required" /><br>
+                <input class="form-input" type="text" name=" Slope " placeholder=" Slope " required="required" />
+                <input class="form-input" type="text" name=" CA " placeholder=" CA " required="required" /><br>
+                <input class="form-input" type="text" name=" Thalassemia " placeholder=" Thalassemia " required="required" /><br><br>
+                         
+        		<input type="submit" class="my-cta-button" value="Predict">
+        		<br><br><br>
+
+        	</form>
+        </div>    		       
+        <div class='description1'>
+              <p>{{ prediction_text }}</p>
+    	</div>
+        <br>
+
+    	</div>
+
+        <!-- Footer -->
+       <div class='footer'>
+           <div class="contact">
+               <a target="_blank" href="https://github.com/VishalMandrai/Healthcare-ML-Based-Web-App"><i class="fab fa-github fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/vishal-mandrai999/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+           </div>
+           <p class='footer-description'>Made with ❤️ by Vishal Mandrai</p>
+       </div>
+
+    </body>
+</html>
